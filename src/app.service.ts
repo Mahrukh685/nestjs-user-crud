@@ -21,14 +21,20 @@ export class AppService {
   getUsers() {
     return { data: users };
   }
-  getUsersbyId(id){
+  getUsersbyId(id) {
     let myuser;
-    for(let i=0;i<users.length;i++){
-      if(users[i].id==id){
-       myuser =users[i]
-
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].id == id) {
+        myuser = users[i];
       }
     }
-    return {data:myuser}
+    return { data: myuser };
   }
+
+  createUser(name, age) {
+    users.push({name,age,id:Math.random()});
+    return {data:"user has been created"}
+  }
+
+
 }
