@@ -21,4 +21,14 @@ export class AppService {
   getUsers() {
     return { data: users };
   }
+  getUsersbyId(id){
+    let myuser;
+    for(let i=0;i<users.length;i++){
+      if(users[i].id==id){
+       myuser =users[i]
+
+      }
+    }
+    return {data:myuser}
+  }
 }
