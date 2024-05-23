@@ -1,5 +1,4 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { Module } from '@nestjs/common';
 import { DataSource } from 'typeorm';
  export const databaseProviders = [
   {
@@ -21,8 +20,8 @@ import { DataSource } from 'typeorm';
   },
 ];
 
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
-}
-bootstrap();
+@Module({
+  providers: [...databaseProviders],
+  exports: [...databaseProviders],
+})
+export class DatabaseModule {}
