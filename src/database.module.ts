@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { DataSource } from 'typeorm';
+import { userEntity } from './users/user.entity';
  export const databaseProviders = [
   {
     provide: 'DATA_SOURCE',
@@ -12,7 +13,7 @@ import { DataSource } from 'typeorm';
         password: "123456789",
         connectTimeout: 60 * 60 * 1000,
         database: "user",
-        entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+        entities: [userEntity],
         synchronize: false,
       });
       return dataSource.initialize();
