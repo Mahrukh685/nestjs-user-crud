@@ -15,8 +15,15 @@ export class AppController {
     return this.appService.getUsersbyId(param.id);
   }
 
+  // @Post()
+  // createUser(@Body() body) {
+  //   return this.appService.createUser(body.name ,body.age);
+  // }
+
   @Post()
-  createUser(@Body() body) {
-    return this.appService.createUser(body.name ,body.age);
+  createUser(@Body()users:userEntity) {
+    return this.appService.create(users)
   }
+  
+
 }

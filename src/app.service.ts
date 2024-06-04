@@ -32,7 +32,7 @@ export class AppService {
   }
 
   createUser(name, age) {
-    users.push({name,age,id:Math.random()});
+    users.push({Id ,Name,Age,Uni});
     return {data:"user has been created"}
   }
 

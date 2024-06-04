@@ -7,10 +7,10 @@ export class userEntity{
     Id:number;
 
     @Column()
-    name: string;
+    Name: string;
 
     @Column()
-    age: string;
+    Age: string;
 
     @Column()
     Uni: string;
